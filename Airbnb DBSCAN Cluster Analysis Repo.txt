@@ -1,0 +1,83 @@
+Airbnb DBSCAN Cluster Analysis Report — Amsterdam
+Aim of the Analysis
+
+The purpose of this analysis was to investigate whether Airbnb review scores are primarily influenced by the actual quality of the property or whether other factors such as price, property size (bedrooms), and spatial location also play an important role.
+
+Using Airbnb listings from Amsterdam, a spatial clustering analysis was conducted with the DBSCAN algorithm. The analysis used three variables:
+
+Number of bedrooms
+Price
+Review score value
+
+The workflow included:
+
+exploratory spatial analysis,
+correlation analysis,
+linear regression,
+DBSCAN clustering,
+and spatial visualisation of the clusters.
+Dataset Summary
+
+After cleaning missing and unrealistic values:
+
+Total listings analysed: 11,743
+Variables used:
+bedrooms
+price
+review_scores_value
+
+The variables were standardised before clustering to avoid price dominating the DBSCAN distance calculations.
+
+Main Findings
+
+1. Weak Relationship Between Reviews and Price
+
+The regression analysis showed that review scores have only a weak relationship with property prices.
+
+This suggests that expensive properties do not necessarily receive higher review scores, and cheaper properties can still achieve excellent ratings. The scatterplots showed a very wide spread of prices across similar review scores.
+
+2. Bedrooms Influence Price More Than Reviews
+
+The analysis indicated that properties with more bedrooms generally have higher prices, but bedroom count has little effect on review scores.
+
+This means review ratings are not strongly determined by property size.
+
+DBSCAN Clustering Results
+
+The DBSCAN algorithm identified many clusters of Airbnb listings with similar characteristics.
+
+Key Results
+Estimated epsilon (eps): approximately 0.066
+Minimum samples: 5
+Noise points (outliers): 502 listings
+Silhouette score: 0.511
+
+A silhouette score > 0.5 indicates a reasonably strong clustering structure. This means the algorithm successfully detected meaningful groupings in the Airbnb market.
+
+Main Cluster Characteristics:
+
+The largest clusters identified were:
+
+Cluster	Typical Characteristics
+Cluster 5	Low-price, 1-bedroom listings with review scores around 9
+Cluster 2	Low-price, 1-bedroom listings with review scores around 10
+Cluster 0	Medium-price, 2-bedroom properties with review scores around 9
+Cluster 1	Medium-price, 2-bedroom properties with review scores around 10
+
+The outlier group (cluster = -1) contained:
+
+very expensive properties, larger apartments, and listings with unusual combinations of price and review score. 
+
+Spatial Distribution Findings:
+
+The spatial cluster maps showed clear geographic patterns across Amsterdam. Central areas contained more expensive listings, peripheral areas contained cheaper and smaller properties, while review scores remained relatively high across most locations.
+
+This supports the idea that, location and price structure Airbnb markets spatially, but review scores are comparatively stable.
+
+Conclusion:
+
+The analysis suggests that Airbnb review scores are not strongly driven by price or property size alone. Instead, location and market segmentation appear to play a larger role in differentiating listings.
+
+DBSCAN successfully identified meaningful spatial and attribute-based clusters within the Amsterdam Airbnb market. The results demonstrate that:
+
+high prices do not guarantee better reviews, review scores remain consistently high across many clusters,and the strongest differences between listings are related to property size and spatial location rather than customer ratings alone.
